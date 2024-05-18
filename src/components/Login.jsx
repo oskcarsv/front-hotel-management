@@ -14,7 +14,7 @@ import myImage from '../assets/img/Imagen1.png';
 import './styles/Login.css';
 
 export const Login = ({ switchAuthHandler }) => {
-  const {login, isLoading} = useLogin();
+  const { login, isLoading } = useLogin();
 
   const [formState, setFormState] = useState({
     usernameOrEmail: {
@@ -43,7 +43,7 @@ export const Login = ({ switchAuthHandler }) => {
     let isValid = false;
     switch (field) {
       case "usernameOrEmail":
-        isValid = validateUsernameOrEmail(value)
+        isValid = validateUsernameOrEmail(value);
         break;
       case "password":
         isValid = validatePassword(value);
@@ -51,22 +51,24 @@ export const Login = ({ switchAuthHandler }) => {
       default:
         break;
     }
-    setFormState((prevState) =>({
-        ...prevState,
-        [field]:{
-            ...prevState[field],
-            isValid,
-            showError: !isValid
-        }
-    }))
+    setFormState((prevState) => ({
+      ...prevState,
+      [field]: {
+        ...prevState[field],
+        isValid,
+        showError: !isValid,
+      },
+    }));
   };
 
   const handleLogin = (event) => {
-    event.preventDefault()
-    login(formState.usernameOrEmail.value, formState.password.value)
-  }
+    event.preventDefault();
+    login(formState.usernameOrEmail.value, formState.password.value);
+  };
 
-  const isSubmitButtonDisabled = isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid
+  const isSubmitButtonDisabled =
+    isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid;
+
   return (
     <div className="frame-1">
       <div className="contact-form">
@@ -91,7 +93,7 @@ export const Login = ({ switchAuthHandler }) => {
                 <div className="user-or-email">User or Email</div>
                 <div className="field">
                   <Input
-                    field="username Or Email"
+                    field="usernameOrEmail"
                     value={formState.usernameOrEmail.value}
                     onChangeHandler={handleInputValueChange}
                     type="text"
@@ -130,13 +132,11 @@ export const Login = ({ switchAuthHandler }) => {
               </div>
             </div>
           </div>
-          {/* Aquí incluye la imagen con la etiqueta <img> */}
           <div className="image-1">
             <img src={myImage} alt="My Image" />
           </div>
         </div>
-        <div className="navigation-footer">
-        </div>
+        <div className="navigation-footer"></div>
       </div>
     </div>
   );
