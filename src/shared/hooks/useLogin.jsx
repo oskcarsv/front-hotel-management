@@ -8,11 +8,11 @@ export const useLogin = () => {
 
     const navigate = useNavigate()
 
-    const login = async(email, password) =>{
+    const login = async(usernameOrEmail, password) =>{
         setIsLoading(true)
 
         const response = await loginRequest({
-            email,
+            usernameOrEmail,
             password
         })
         console.log(response)
