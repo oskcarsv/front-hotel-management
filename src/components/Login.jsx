@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Input } from "./Input";
 import {
@@ -8,13 +7,15 @@ import {
   validateUsernameOrEmailMessage
 } from "../shared/validators";
 import { useLogin } from "../shared/hooks";
+import { useNavigate } from 'react-router-dom';  // Importa useNavigate
 
 import myImage from '../assets/img/Imagen1.png';
 
 import './styles/Login.css';
 
 export const Login = ({ switchAuthHandler }) => {
-  const { login, isLoading } = useLogin();
+  const {login, isLoading} = useLogin();
+  const navigate = useNavigate();  // Usa useNavigate
 
   const [formState, setFormState] = useState({
     usernameOrEmail: {
@@ -43,7 +44,7 @@ export const Login = ({ switchAuthHandler }) => {
     let isValid = false;
     switch (field) {
       case "usernameOrEmail":
-        isValid = validateUsernameOrEmail(value);
+        isValid = validateUsernameOrEmail(value)
         break;
       case "password":
         isValid = validatePassword(value);
@@ -51,23 +52,26 @@ export const Login = ({ switchAuthHandler }) => {
       default:
         break;
     }
-    setFormState((prevState) => ({
-      ...prevState,
-      [field]: {
-        ...prevState[field],
-        isValid,
-        showError: !isValid,
-      },
-    }));
+    setFormState((prevState) =>({
+        ...prevState,
+        [field]:{
+            ...prevState[field],
+            isValid,
+            showError: !isValid
+        }
+    }))
   };
 
   const handleLogin = (event) => {
-    event.preventDefault();
-    login(formState.usernameOrEmail.value, formState.password.value);
-  };
+    event.preventDefault()
+    login(formState.usernameOrEmail.value, formState.password.value)
+  }
 
-  const isSubmitButtonDisabled =
-    isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid;
+  const handleBack = () => {
+    navigate('/');  // Navega a la página principal
+  }
+
+  const isSubmitButtonDisabled = isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid
 
   return (
     <div className="frame-1">
@@ -76,7 +80,7 @@ export const Login = ({ switchAuthHandler }) => {
           <div className="page">Page</div>
           <div className="page-1">Page</div>
           <div className="abut-us">About Us</div>
-          <div className="button-2">
+          <div className="button-2" onClick={handleBack}>
             <span className="regresar">Regresar</span>
           </div>
         </div>
@@ -136,7 +140,8 @@ export const Login = ({ switchAuthHandler }) => {
             <img src={myImage} alt="My Image" />
           </div>
         </div>
-        <div className="navigation-footer"></div>
+        <div className="navigation-footer">
+        </div>
       </div>
     </div>
   );

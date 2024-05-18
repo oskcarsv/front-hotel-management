@@ -25,12 +25,18 @@
   
   .page,
   .page-1,
-  .abut-us,
-  .regresar {
+  .abut-us {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 20px;
     color: #000000;
+  }
+  
+  .regresar {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF; /* Cambiar color de texto a blanco */
   }
   
   .button-2 {
@@ -38,6 +44,9 @@
     color: #FFFFFF;
     padding: 10px 20px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .container {
@@ -106,11 +115,21 @@
   }
   
   .button {
-    background: #000000;
-    color: #FFFFFF;
+    background: #000000; /* Fondo negro */
+    color: #FFFFFF; /* Texto blanco */
     padding: 15px;
     border-radius: 8px;
     text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button:disabled {
+    background: #000000; /* Fondo negro para estado deshabilitado */
+    color: #828282; /* Texto gris para estado deshabilitado */
+    cursor: not-allowed;
   }
   
   .have-you-not-registered-do-it-here {
@@ -127,6 +146,7 @@
     padding: 10px 20px;
     border-radius: 8px;
     text-align: center;
+    cursor: pointer;
   }
   
   .image-1 {
