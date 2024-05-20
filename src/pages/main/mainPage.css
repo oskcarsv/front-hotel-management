@@ -1,11 +1,9 @@
-/* Estilos para el contenedor principal */
 .main-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Ajusta la altura según sea necesario */
+    height: 100vh; 
   }
   
-  /* Estilos para la barra de navegación */
   .navbar {
     background-color: #333;
     color: #fff;
@@ -19,36 +17,29 @@
   .main-content {
     display: flex;
     flex: 1;
-    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
-    width: 100%; /* Ocupa toda la anchura */
+    height: 100vh;
+    width: 100%;
   }
   
   
-  /* Estilos para la barra lateral */
   .sidebar-container {
-    width: 250px; /* Ajusta el ancho según sea necesario */
+    width: 250px;
     background-color: #f4f4f4;
     padding: 20px;
   }
   
-  /* Estilos para el contenido dentro de la barra lateral */
   .sidebar-list-item {
     margin-bottom: 10px;
   }
   
-  /* Estilos para el contenido principal */
   .content-container {
-    
-    /* flex: 1;
-    padding: 20px; */
+
   }
   
-  /* Estilos para el texto dentro del contenido */
   .text-container {
     text-align: center;
   }
   
-  /* Estilos para el spinner de carga */
   .loading-spinner {
     display: flex;
     justify-content: center;

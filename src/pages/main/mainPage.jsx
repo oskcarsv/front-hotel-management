@@ -4,11 +4,11 @@ import { LoadingSpinner } from "../../components/LoadingSpinner";
 import { Content } from "../../components/dashboard/Content";
 
 
-import "./mainPage.css"; // Asegúrate de tener este archivo CSS para los estilos de la página principal
+import "./mainPage.css";
 
 export const MainPage = () => {
   const text = "¡Bienvenido a la página principal!";
-  const isFetching = false; // Cambia a true si estás realizando alguna operación asincrónica
+  const isFetching = false;
 
   if (isFetching) {
     return <LoadingSpinner />;

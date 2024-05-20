@@ -7,15 +7,14 @@ import {
   validateUsernameOrEmailMessage
 } from "../shared/validators";
 import { useLogin } from "../shared/hooks";
-import { useNavigate } from 'react-router-dom';  // Importa useNavigate
-
+import { useNavigate } from 'react-router-dom';
 import myImage from '../assets/img/Imagen1.png';
 
 import './styles/Login.css';
 
 export const Login = ({ switchAuthHandler }) => {
   const {login, isLoading} = useLogin();
-  const navigate = useNavigate();  // Usa useNavigate
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     usernameOrEmail: {
@@ -68,7 +67,7 @@ export const Login = ({ switchAuthHandler }) => {
   }
 
   const handleBack = () => {
-    navigate('/');  // Navega a la página principal
+    navigate('/');
   }
 
   const isSubmitButtonDisabled = isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid
