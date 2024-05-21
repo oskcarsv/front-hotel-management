@@ -10,7 +10,7 @@ export const useEvents = () => {
       setLoading(true);
       const response = await fetch('/api/events');
       if (!response.ok) {
-        throw new Error('Error al buscar evento');
+        throw new Error('Failed to fetch event');
       }
       const data = await response.json();
       setEvents(data);
@@ -31,7 +31,7 @@ export const useEvents = () => {
         body: JSON.stringify(event),
       });
       if (!response.ok) {
-        throw new Error('Error al añadir evento');
+        throw new Error('Failed to add event');
       }
       const newEvent = await response.json();
       setEvents((prevEvents) => [...prevEvents, newEvent.event]);
@@ -50,7 +50,7 @@ export const useEvents = () => {
         body: JSON.stringify(updatedEvent),
       });
       if (!response.ok) {
-        throw new Error('Error al actualizar evento');
+        throw new Error('Failed to update event');
       }
       const result = await response.json();
       setEvents((prevEvents) =>
@@ -71,7 +71,7 @@ export const useEvents = () => {
         body: JSON.stringify({ state: false }),
       });
       if (!response.ok) {
-        throw new Error('Error al cancelar evento');
+        throw new Error('Failed to cancel event');
       }
       const result = await response.json();
       setEvents((prevEvents) =>
@@ -92,7 +92,7 @@ export const useEvents = () => {
         body: JSON.stringify({ resources }),
       });
       if (!response.ok) {
-        throw new Error('Error al asignar los recursos');
+        throw new Error('Failed to assign resources');
       }
       const result = await response.json();
       setEvents((prevEvents) =>
