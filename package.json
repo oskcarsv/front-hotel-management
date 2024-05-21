@@ -1,5 +1,6 @@
 {
-  "name": "products-storage-front-vite",
+  "name": "front-hotels-management-vite",
+  "author": "Grupo #6",
   "private": true,
   "version": "0.0.0",
   "type": "module",
