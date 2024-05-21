@@ -12,23 +12,21 @@ export const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="tittle-">
-        <h1>YouHotel</h1>
+      <div className="tittle-container">
+        <h1 className="text-title-main">YouHotel</h1>
       </div>
 
-      <ul className="navbar-links">
+      <div className="buttons-container">
         {saved == null ? (
-          <li>
-            <a href="/auth">Login</a>
-          </li>
+          <a className="button" href="/auth">
+            Login
+          </a>
         ) : (
-          <li>
-            <a href="#" onClick={handleLogout}>
-              Exit
-            </a>
-          </li>
+          <a className="button" href="#" onClick={handleLogout}>
+            Exit
+          </a>
         )}
-      </ul>
+      </div>
     </nav>
   );
 };

@@ -2,11 +2,9 @@ import { Navbar } from "../../components/navbars/Navbar";
 import { LoadingSpinner } from "../../components/LoadingSpinner";
 import { Content } from "../../components/dashboard/Content";
 
-
 import "./mainPage.css";
 
 export const MainPage = () => {
-  const text = "¡Bienvenido a la página principal!";
   const isFetching = false;
 
   if (isFetching) {
@@ -16,9 +14,7 @@ export const MainPage = () => {
   return (
     <div className="main-container">
       <Navbar />
-      <div className="main-content">
-        <Content text={text} />
-      </div>
+      <Content/>
     </div>
   );
 };
