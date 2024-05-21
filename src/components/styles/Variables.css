@@ -17,7 +17,13 @@
     --secondary-font: 'League Spartan', sans-serif;
     --secondary-font-size: 30px;
     --secondary-font-weight: normal;
-    --secondary-font-color: var(--blue);
+    --secondary-font-color: var(--black);
+
+    /* normal font */
+    --normal-font: 'League Spartan', sans-serif;
+    --normal-font-size: 20px;
+    --normal-font-weight: normal;
+    --normal-font-color: var(--blue);
 
     /*button*/
     --button-font-size: 20px;

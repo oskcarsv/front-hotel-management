@@ -5,16 +5,16 @@ import {
   validatePasswordMessage,
   validatePassword,
   validateUsernameOrEmail,
-  validateUsernameOrEmailMessage
+  validateUsernameOrEmailMessage,
 } from "../shared/validators";
 import { useLogin } from "../shared/hooks";
-import { useNavigate } from 'react-router-dom';
-import myImage from '../assets/img/Imagen1.png';
+import { useNavigate } from "react-router-dom";
+import myImage from "../assets/img/login-img.png";
 
-import './styles/Login.css';
+import "./styles/Login.css";
 
 export const Login = ({ switchAuthHandler }) => {
-  const {login, isLoading} = useLogin();
+  const { login, isLoading } = useLogin();
   const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
@@ -44,7 +44,7 @@ export const Login = ({ switchAuthHandler }) => {
     let isValid = false;
     switch (field) {
       case "usernameOrEmail":
-        isValid = validateUsernameOrEmail(value)
+        isValid = validateUsernameOrEmail(value);
         break;
       case "password":
         isValid = validatePassword(value);
@@ -52,26 +52,29 @@ export const Login = ({ switchAuthHandler }) => {
       default:
         break;
     }
-    setFormState((prevState) =>({
-        ...prevState,
-        [field]:{
-            ...prevState[field],
-            isValid,
-            showError: !isValid
-        }
-    }))
+    setFormState((prevState) => ({
+      ...prevState,
+      [field]: {
+        ...prevState[field],
+        isValid,
+        showError: !isValid,
+      },
+    }));
   };
 
   const handleLogin = (event) => {
-    event.preventDefault()
-    login(formState.usernameOrEmail.value, formState.password.value)
-  }
+    event.preventDefault();
+    login(formState.usernameOrEmail.value, formState.password.value);
+  };
 
   const handleBack = () => {
-    navigate('/');
-  }
+    navigate("/");
+  };
 
-  const isSubmitButtonDisabled = isLoading || !formState.password.isValid || !formState.usernameOrEmail.isValid
+  const isSubmitButtonDisabled =
+    isLoading ||
+    !formState.password.isValid ||
+    !formState.usernameOrEmail.isValid;
 
   return (
     <div className="frame-1">
@@ -89,7 +92,8 @@ export const Login = ({ switchAuthHandler }) => {
             <div className="headline">
               <div className="login-1">Login</div>
               <span className="welcome-back">
-                Welcome back<br />
+                Welcome back
+                <br />
               </span>
             </div>
             <form className="form" onSubmit={handleLogin}>
@@ -129,7 +133,8 @@ export const Login = ({ switchAuthHandler }) => {
             </form>
             <div className="input-2">
               <div className="have-you-not-registered-do-it-here">
-                Have you not registered? Do it here<br />
+                Have you not registered? Do it here
+                <br />
               </div>
               <div className="button-1" onClick={switchAuthHandler}>
                 <span className="register">Register</span>
@@ -140,8 +145,7 @@ export const Login = ({ switchAuthHandler }) => {
             <img src={myImage} alt="My Image" />
           </div>
         </div>
-        <div className="navigation-footer">
-        </div>
+        <div className="navigation-footer"></div>
       </div>
     </div>
   );
