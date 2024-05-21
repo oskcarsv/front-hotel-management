@@ -46,3 +46,14 @@ export const getUsers = async () => {
       }
   }
 }
+
+export const addUser = async () => {
+  try{
+      return await apiClient.post('/user')
+  }catch(e){
+      return{
+          error: true,
+          e
+      }
+  }
+}
