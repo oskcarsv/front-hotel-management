@@ -2,7 +2,10 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { getUsers as getUserRequest, addUser as addUserRequest } from "../../services/api"; 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8d15d84b30080f5187744b757e463899a3414e0
 export const getUsers = () => {
   const [Users, setUsers] = useState();
 
