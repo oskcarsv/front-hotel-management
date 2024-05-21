@@ -35,3 +35,14 @@ export const login = async (data) => {
     }
   }
 }
+
+export const getUsers = async () => {
+  try{
+      return await apiClient.get('/user')
+  }catch(e){
+      return{
+          error: true,
+          e
+      }
+  }
+}
