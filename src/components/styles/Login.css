@@ -1,4 +1,4 @@
-.frame-1 {
+/* .frame-1 {
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 20px;
-    color: #FFFFFF; /* Cambiar color de texto a blanco */
+    color: #FFFFFF;
   }
   
   .button-2 {
@@ -102,7 +102,7 @@
     border: 1px solid #E0E0E0;
     border-radius: 8px;
     padding: 10px;
-    background: #FFFFFF; /* Asegúrate de que el fondo sea blanco */
+    background: #FFFFFF;
   }
   
   .field input,
@@ -111,12 +111,12 @@
     padding: 10px;
     border: none;
     outline: none;
-    background: #FFFFFF; /* Asegúrate de que el fondo sea blanco */
+    background: #FFFFFF;
   }
   
   .button {
-    background: #000000; /* Fondo negro */
-    color: #FFFFFF; /* Texto blanco */
+    background: #000000;
+    color: #FFFFFF; 
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -127,8 +127,8 @@
   }
   
   .button:disabled {
-    background: #000000; /* Fondo negro para estado deshabilitado */
-    color: #828282; /* Texto gris para estado deshabilitado */
+    background: #000000;
+    color: #828282;
     cursor: not-allowed;
   }
   
@@ -160,7 +160,6 @@
   .image-1 img {
     width: 100%;
     height: 100%;
-    /* Eliminar border-radius para evitar que la imagen sea redonda */
   }
   
   .navigation-footer {
@@ -185,4 +184,4 @@
     width: 100%;
     height: 100%;
   }
-  
+   */

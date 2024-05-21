@@ -24,7 +24,7 @@ export const Navbar = () => {
         ) : (
           <li>
             <a href="#" onClick={handleLogout}>
-              Salir
+              Exit
             </a>
           </li>
         )}
