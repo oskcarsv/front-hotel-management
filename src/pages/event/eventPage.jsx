@@ -1,17 +1,16 @@
-import { Navbar } from "../../components/navbars/Navbar";
-import { Footer } from "../../components/footer/Footer";
+import { Navbar } from '../../components/navbars/Navbar'
+import { Footer } from '../../components/footer/Footer'
 
-import "./eventPage.css";
+import './eventPage.css'
 
 export const EventPage = () => {
-
   return (
-    <div className="event-container">
+    <div className='event-container'>
       <Navbar />
 
-      {/* Llamar aquí al componente para listar realizar la estructura de eventos*/}
+      {/* Llamar aquí al componente para listar realizar la estructura de eventos */}
 
       <Footer />
     </div>
-  );
-};
+  )
+}
