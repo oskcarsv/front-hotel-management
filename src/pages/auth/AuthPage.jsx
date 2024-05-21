@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Login } from '../../components/Login'
 import { Navbar } from '../../components/navbars/Navbar'
+import { Register } from "../../components/Register"
 
 import './authPage.css'
 
