@@ -1,37 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 
 :root {
-    /*Colors*/
-    --black: black;
-    --beige: #FFFBF5;
-    --blue: #27374D;
+  /*Colors*/
+  --black: black;
+  --beige: #fffbf5;
+  --blue: #27374d;
 
-    /*primary font*/
-    --primary-font: 'League Spartan', sans-serif;
-    --primary-font-size: 50px;
-    --primary-font-weight: bold;
-    --primary-font-color: var(--black);
+  /*primary font*/
+  --primary-font: "League Spartan", sans-serif;
+  --primary-font-size: 50px;
+  --primary-font-weight: bold;
+  --primary-font-color: var(--black);
 
-    /*secondary font*/
-    --secondary-font: 'League Spartan', sans-serif;
-    --secondary-font-size: 30px;
-    --secondary-font-weight: normal;
-    --secondary-font-color: var(--black);
+  /*secondary font*/
+  --secondary-font: "League Spartan", sans-serif;
+  --secondary-font-size: 30px;
+  --secondary-font-weight: normal;
+  --secondary-font-color: var(--black);
 
-    /* normal font */
-    --normal-font: 'League Spartan', sans-serif;
-    --normal-font-size: 20px;
-    --normal-font-weight: normal;
-    --normal-font-color: var(--blue);
+  /* normal font */
+  --normal-font: "League Spartan", sans-serif;
+  --normal-font-size: 20px;
+  --normal-font-weight: normal;
+  --normal-font-color: var(--blue);
 
-    /*short buttons*/
-    --button-font-size: 20px;
-    --button-font-weight: normal;
-    --button-font-color: var(--beige);
-    --button-background-color: var(--black);
-    --button-border: none;
-    --button-padding: 10px 20px;
-    --button-border-radius: 10px;
-    --button-cursor: pointer;
+  /*short buttons*/
+  --button-font-size: 20px;
+  --button-font-weight: normal;
+  --button-font-color: var(--beige);
+  --button-background-color: var(--black);
+  --button-border: none;
+  --button-padding: 10px 20px;
+  --button-border-radius: 10px;
+  --button-cursor: pointer;
 }
