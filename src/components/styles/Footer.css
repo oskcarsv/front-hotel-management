@@ -6,3 +6,17 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.text-footer {
+    font-family: var(--secondary-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--secondary-font-weight);
+    color: var(--secondary-font-color);
+}

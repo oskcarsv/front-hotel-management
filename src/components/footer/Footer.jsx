@@ -4,8 +4,11 @@ import "../styles/Variables.css";
 export const Footer = () => {
   return (
     <nav className="footer">
-      <div className="tittle-container">
-        <h1 className="text-title-main">YouHotel</h1>
+      <div>
+        <h1 className="text-footer">YouHotel</h1>
+      </div>
+      <div>
+        <h1 className="text-footer">©YouHotel 2024</h1>
       </div>
     </nav>
   );
