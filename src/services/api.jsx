@@ -57,3 +57,24 @@ export const addUser = async () => {
       }
   }
 }
+
+export const editUser = async () => {
+  try{
+      return await apiClient.get('/user')
+  }catch(e){
+      return{
+          error: true,
+          e
+      }
+  }
+}
+export const deleteUser = async () => {
+  try{
+      return await apiClient.get('/user')
+  }catch(e){
+      return{
+          error: true,
+          e
+      }
+  }
+}

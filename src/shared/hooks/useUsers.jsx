@@ -1,11 +1,10 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { getUsers as getUserRequest, addUser as addUserRequest } from "../../services/api"; 
+import { getUsers as getUserRequest, 
+         addUser as addUserRequest, 
+         editUser as editUserRequest, 
+         deleteUser as deleteUserRequest } from "../../services/api"; 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d8d15d84b30080f5187744b757e463899a3414e0
 export const getUsers = () => {
   const [Users, setUsers] = useState();
 
@@ -51,10 +50,62 @@ export const getUsers = () => {
     }
   };
 
+  const editUser = async (userId, updatedUserData) => {
+    try {
+      const token = localStorage.getItem("token"); 
+      const headers = {
+        "Content-Type": "application/json",
+        "x-token": token 
+      };
+
+      const responseData = await editUserRequest(userId, updatedUserData, headers);
+
+      if (responseData.error) {
+        toast.error(
+          responseData.error.message || "Error editing user"
+        );
+      } else {
+        toast.success("User edited successfully");
+        
+        getUsers();
+      }
+    } catch (error) {
+      console.error("Error editing user:", error);
+      toast.error("An error occurred while editing the user");
+    }
+  };
+
+  const deleteUser = async (userId) => {
+    try {
+      const token = localStorage.getItem("token"); 
+      const headers = {
+        "Content-Type": "application/json",
+        "x-token": token 
+      };
+
+      const responseData = await deleteUserRequest(userId, headers);
+
+      if (responseData.error) {
+        toast.error(
+          responseData.error.message || "Error deleting user"
+        );
+      } else {
+        toast.success("User successfully deleted");
+        
+        getUsers();
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      toast.error("An error occurred while deleting the user");
+    }
+  };
+
   return {
     Users,
     isFetching: !Users,
     getUsers,
-    addUser
+    addUser,
+    editUser,
+    deleteUser
   };
 };
