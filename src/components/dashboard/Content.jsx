@@ -1,7 +1,6 @@
 import "../styles/Content.css";
 import "../styles/Variables.css";
 import bannerWelcome from "../../assets/img/banner-welcome.png";
-import hotelImg from "../../assets/img/hotel-img.jpg";
 
 export const Content = () => {
   return (
@@ -20,15 +19,9 @@ export const Content = () => {
       <section className="go-container">
         <h1 className="text-title">Go to find YouHotel</h1>
         <div className="go-content">
-          <div>
-            <h2 className="text-subtitle">
-              Find the perfect hotel for you, elegant, comfortable and
-              accessible
-            </h2>
-          </div>
-          <div className="go-img-container">
-            <img className="go-img" src={hotelImg} />
-          </div>
+          <h2 className="text-subtitle">
+            Find the perfect hotel for you, elegant, comfortable and accessible
+          </h2>
         </div>
       </section>
     </div>

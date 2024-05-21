@@ -1,6 +1,7 @@
 import { Navbar } from "../../components/navbars/Navbar";
 import { LoadingSpinner } from "../../components/LoadingSpinner";
 import { Content } from "../../components/dashboard/Content";
+import { Footer } from "../../components/footer/Footer";
 
 import "./mainPage.css";
 
@@ -15,6 +16,7 @@ export const MainPage = () => {
     <div className="main-container">
       <Navbar />
       <Content/>
+      <Footer />
     </div>
   );
 };
