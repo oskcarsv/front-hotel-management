@@ -3,8 +3,13 @@ import { useState } from 'react'
 import '../styles/Navbar.css'
 import '../styles/Variables.css'
 import toast from 'react-hot-toast'
+import { useLocation } from 'react-router-dom'
 
 export const Navbar = ({ redirectHome }) => {
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search)
+  const addHotelClicked = queryParams.get('addHotelClicked')
+
   let saved = localStorage.getItem('user')
 
   saved = JSON.parse(saved)
@@ -41,9 +46,17 @@ export const Navbar = ({ redirectHome }) => {
             : allowedRoles.includes(saved.user.role)
               ? (
                 <div className='lineal'>
-                  <a className='button' href='./'>
-                    Add Hotel
-                  </a>
+                  {addHotelClicked
+                    ? (
+                      <a className='button' href='./hotel'>
+                        List Hotels
+                      </a>
+                      )
+                    : (
+                      <a className='button' href='./hotel?addHotelClicked=true'>
+                        Add Hotel
+                      </a>
+                      )}
                   <a className='button' href='./'>
                     User
                   </a>
