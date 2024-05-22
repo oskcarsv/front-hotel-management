@@ -14,6 +14,10 @@
   color: var(--primary-font-color);
 }
 
+.buttons {
+  display: flex;
+}
+
 .button {
   font-family: var(--primary-font);
   font-size: var(--button-font-size);
@@ -25,6 +29,7 @@
   border-radius: var(--button-border-radius);
   cursor: var(--button-cursor);
   text-decoration: none;
+  margin-right: 5px;
 }
 
 .button:hover {
