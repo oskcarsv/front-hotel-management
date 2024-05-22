@@ -34,17 +34,26 @@
     object-fit: cover;
 }
 
-.hotel-name, .hotel-address {
-    margin: 10px 0;
-}
-
-
 .address-content {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .address-icon {
-    width: 20px; /* Ajusta el ancho de la imagen */
-    height: 20px; /* Ajusta la altura de la imagen */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.hotel-name{
+    font-family: var(--secondary-font);
+    font-size: 25px;
+    margin-top: 10px;
+} 
+
+.hotel-address {
+    font-family: var(--normal-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--normal-font-weight);
 }
