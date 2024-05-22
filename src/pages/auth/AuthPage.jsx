@@ -13,6 +13,10 @@ export const AuthPage = () => {
     setIsLogin((prev) => !prev)
   }
 
+  const handleLogin = () => {
+    setIsLogin(true);
+  };
+
   return (
     <div className='auth-container'>
       <Navbar />
@@ -21,7 +25,7 @@ export const AuthPage = () => {
           <Login switchAuthHandler={handleAuthPageToggle} />
           )
         : (
-          <Register switchAuthHandler={handleAuthPageToggle} />
+          <Register switchAuthHandler={handleAuthPageToggle} onRegister={handleLogin}/>
           )}
     </div>
   )

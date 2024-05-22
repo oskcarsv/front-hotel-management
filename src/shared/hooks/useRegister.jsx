@@ -21,17 +21,13 @@ export const useRegister = () => {
 
         if (response.error) {
             console.log(response.error)
-            console.log(response.e); // Imprime el objeto de error
-            console.log(response.e?.response); // Imprime la respuesta del servidor
-            console.log(response.e?.response?.data); // Imprime los datos de la respuesta
+            console.log(response.e);
+            console.log(response.e?.response);
+            console.log(response.e?.response?.data);
             return toast.error(response.e?.response?.data || 'An error occurred while registering, please try again')
         }
 
-        const { userDetails } = response.data
-
-        localStorage.setItem('user', JSON.stringify(userDetails))
-
-        navigate('/')
+        navigate('/auth')
     }
     return {
         register,

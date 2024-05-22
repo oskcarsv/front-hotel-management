@@ -16,8 +16,8 @@ import {
 import { useRegister } from "../shared/hooks/useRegister";
 import './Register.css';
 
-export const Register = ({ switchAuthHandler }) => {
-  const { register, isLoading } = useRegister();
+export const Register = ({ switchAuthHandler, onRegister}) => {
+  const { register, isLoading} = useRegister();
 
   const [formState, setFormState] = useState({
     name: {
@@ -91,6 +91,7 @@ export const Register = ({ switchAuthHandler }) => {
   const handleRegister = (event) => {
     event.preventDefault();
     register(formState.name.value ,formState.email.value, formState.password.value, formState.username.value);
+    onRegister();
   };
 
   const isSubmitButtonDisabled = isLoading ||
@@ -98,6 +99,7 @@ export const Register = ({ switchAuthHandler }) => {
     !formState.email.isValid ||
     !formState.passwordConfirm.isValid ||
     !formState.username.isValid;
+
 
   return (
     <div className="register-container">
