@@ -52,3 +52,14 @@ export const listHotels = async (data) => {
     }
   }
 }
+
+export const addHotel = async (data) => {
+  try {
+    return await apiClient.post('/hotel', data)
+  } catch (e) {
+    return {
+      error: true,
+      e
+    }
+  }
+}
