@@ -1,86 +1,85 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .register-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .hotel-image {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    margin-bottom: 10px;
-  }
-  
-  .logo {
-    width: 150px;
-    height: auto;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .auth-form label {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #666;
-  }
-  
-  .auth-form input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .auth-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .auth-form button:disabled {
-    background-color: #cccccc;
-  }
-  
-  .auth-form button:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-  
-  .auth-form-switch-label {
-    margin-top: 20px;
-    color: #007BFF;
-    cursor: pointer;
-  }
-  
-  .auth-form-switch-label:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.register-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hotel-image {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.auth-form input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-form button:disabled {
+  background-color: #cccccc;
+}
+
+.auth-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.auth-form-switch-label {
+  margin-top: 20px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.auth-form-switch-label:hover {
+  text-decoration: underline;
+}

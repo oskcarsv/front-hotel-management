@@ -4,4 +4,5 @@ export const validatePassword = (password) => {
   return regex.test(password)
 }
 
-export const validatePasswordMessage = 'One of the necessary parameters is missing: A capital letter, a number from 1-9, a special character, minium 6 characters'
+export const validatePasswordMessage =
+  'One of the necessary parameters is missing: A capital letter, a number from 1-9, a special character, minium 6 characters'

@@ -23,9 +23,7 @@ apiClient.interceptors.request.use(
 
 export const login = async (data) => {
   try {
-
     return await apiClient.post('auth/login', data)
-    
   } catch (e) {
     return {
       error: true,
@@ -34,12 +32,12 @@ export const login = async (data) => {
   }
 }
 export const register = async (data) => {
-  try{
-      return await apiClient.post('/auth/register', data)
-  }catch(e){
-      return{
-          error: true,
-          e
-      }
+  try {
+    return await apiClient.post('/auth/register', data)
+  } catch (e) {
+    return {
+      error: true,
+      e
+    }
   }
 }

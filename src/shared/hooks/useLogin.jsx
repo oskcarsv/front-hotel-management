@@ -28,7 +28,7 @@ export const useLogin = () => {
 
     const userDetails = response.data
 
-    console.log(userDetails);
+    console.log(userDetails)
 
     localStorage.setItem('user', JSON.stringify(userDetails))
 
