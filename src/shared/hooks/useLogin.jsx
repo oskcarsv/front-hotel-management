@@ -32,7 +32,7 @@ export const useLogin = () => {
 
     localStorage.setItem('user', JSON.stringify(userDetails))
 
-    navigate('/')
+    navigate('/hotel')
   }
   return {
     login,
