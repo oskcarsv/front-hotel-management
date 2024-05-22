@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
+import '../styles/Variables.css'
+import '../styles/Cards.css'
+
 import toast from 'react-hot-toast'
+import addressIcon from '../../assets/img/address.png'
 
 export const HotelCard = () => {
   const [hotel, setHotel] = useState([])
@@ -34,29 +38,27 @@ export const HotelCard = () => {
   }, [])
 
   return (
-    <div>
+    <div className='cards-container'>
       {isLoading
         ? (
           <p>Loading.... Wait a minute</p>
           )
         : (
-          <div>
+          <div className='hotel-cards'>
             {Array.isArray(hotel) && hotel.length > 0
               ? (
                   hotel.map((hotel) => (
-                    <div key={hotel._id}>
-                      <div>
-                        <h3>{hotel.hotelName}</h3>
-
+                    <div className='hotel-item' key={hotel._id}>
+                      <div className='item-content'>
                         <div>
-                          <img src={hotel.hotelImage} />
+                          <img className='item-content-img' src={hotel.hotelImage} />
                         </div>
+                        <h3 className='hotel-name'>{hotel.hotelName}</h3>
 
-                        <h3>{hotel.hotelDirection}</h3>
-
-                        <h3>{hotel.hotelNumber}</h3>
-
-                        <h3>{hotel.status}</h3>
+                        <div className='address-content'>
+                          <img className='address-icon' src={addressIcon} />
+                          <h3 className='hotel-address'>{hotel.hotelDirection}</h3>
+                        </div>
                       </div>
                     </div>
                   ))
