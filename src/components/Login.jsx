@@ -79,9 +79,6 @@ export const Login = ({ switchAuthHandler }) => {
   return (
     <div className='frame-1'>
       <div className='contact-form'>
-        <div className='items'>
-          <div className='abut-us'>About Us</div>
-        </div>
         <div className='container'>
           <div className='container-1'>
             <div className='headline'>

@@ -1,5 +1,4 @@
 .frame-1 {
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +7,6 @@
 }
 
 .contact-form {
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,12 +34,10 @@
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 20px;
-  color: #ffffff; /* Cambiar color de texto a blanco */
 }
 
 .button-2 {
   background: #000000;
-  color: #ffffff;
   padding: 10px 20px;
   border-radius: 8px;
   display: flex;
@@ -59,7 +55,7 @@
 }
 
 .headline {
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -68,7 +64,7 @@
   font-weight: 700;
   font-size: 64px;
   color: #000000;
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left;
 }
 
 .welcome-back {
@@ -76,7 +72,7 @@
   font-weight: 400;
   font-size: 24px;
   color: #828282;
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left;
 }
 
 .form {
@@ -101,10 +97,9 @@
 .field-1 {
   width: 100%;
   max-width: 500px;
-  border: 1px solid #e0e0e0;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
   padding: 10px;
-  background: #ffffff;
 }
 
 .field input,
@@ -150,8 +145,7 @@
 }
 
 .image-1 {
-  width: 300px;
-  height: 300px;
+  height: 100%;
   margin-left: 20px;
   display: flex;
   justify-content: flex-end;
@@ -159,8 +153,8 @@
 }
 
 .image-1 img {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 300px;
 }
 
 .navigation-footer {
