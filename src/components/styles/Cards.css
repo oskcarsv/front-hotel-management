@@ -1,0 +1,50 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 50px;
+}
+
+.hotel-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hotel-item {
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.hotel-item:hover {
+    transform: scale(1.05);
+}
+
+.item-content {
+    padding: 20px;
+}
+
+.item-content-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-name, .hotel-address {
+    margin: 10px 0;
+}
+
+
+.address-content {
+    display: flex;
+    align-items: center;
+}
+
+.address-icon {
+    width: 20px; /* Ajusta el ancho de la imagen */
+    height: 20px; /* Ajusta la altura de la imagen */
+}

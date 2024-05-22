@@ -8,6 +8,7 @@ import "../styles/Variables.css";
 import "../styles/Cards.css";
 
 import toast from "react-hot-toast";
+import addressIcon from "../../assets/vectors/address.svg";
 
 export const HotelCard = () => {
   const [hotel, setHotel] = useState([]);
@@ -47,11 +48,14 @@ export const HotelCard = () => {
               <div className="hotel-item" key={hotel._id}>
                 <div className="item-content">
                   <div>
-                    <img src={hotel.hotelImage} />
+                    <img className="item-content-img" src={hotel.hotelImage} />
                   </div>
                   <h3 className="hotel-name">{hotel.hotelName}</h3>
 
-                  <h3 className="hotel-address">{hotel.hotelDirection}</h3>
+                  <div className="address-content">
+                    <img className="address-icon" src={addressIcon} />
+                    <h3 className="hotel-address">{hotel.hotelDirection}</h3>
+                  </div>
                 </div>
               </div>
             ))
