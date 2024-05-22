@@ -1,7 +1,7 @@
 import '../styles/Navbar.css'
 import '../styles/Variables.css'
 
-export const Navbar = () => {
+export const Navbar = ({redirectHome}) => {
   let saved = localStorage.getItem('user')
 
   const handleLogout = () => {
@@ -17,7 +17,11 @@ export const Navbar = () => {
       </div>
 
       <div className='buttons-container'>
-        {saved == null
+        {redirectHome ? (
+            <a className='button' href='./'>
+              Home
+            </a>
+        ):saved == null
           ? (
             <a className='button' href='/auth'>
               Login

@@ -19,7 +19,7 @@ export const AuthPage = () => {
 
   return (
     <div className='auth-container'>
-      <Navbar />
+      <Navbar redirectHome/>
       {isLogin
         ? (
           <Login switchAuthHandler={handleAuthPageToggle} />
