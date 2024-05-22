@@ -1,95 +1,71 @@
-import { listHotels as listHotelsRequest } from "../../services";
+import { listHotels as listHotelsRequest } from '../../services'
 
-import { useEffect } from "react";
+import { useEffect, useState } from 'react'
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
-import { useState } from "react";
+import toast from 'react-hot-toast'
 
-import toast from "react-hot-toast";
+export const HotelCard = () => {
+  const [hotel, setHotel] = useState([])
 
-export const HotelCard = () =>{
+  const navigate = useNavigate()
 
-    const [hotel, setHotel] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
-    const navigate = useNavigate();
+  const listHotel = async () => {
+    setIsLoading(true)
 
-    const [isLoading, setIsLoading] = useState(false);
-
-    const listHotel = async () =>{
-
-        setIsLoading(true);
-
-        try{
-
-            const response = await listHotelsRequest();
-            console.log(response.data);
-            setHotel(response.data.hotel);
-
-        }catch(error){
-
-            return toast.error(
-                hotel.e?.response?.data || "Can't List the Hotels"
-            )
-
-        }finally{
-
-            setIsLoading(false);
-
-        }
-
-
-        console.log(hotel);
-        
+    try {
+      const response = await listHotelsRequest()
+      console.log(response.data)
+      setHotel(response.data.hotel)
+    } catch (error) {
+      return toast.error(hotel.e?.response?.data || "Can't List the Hotels")
+    } finally {
+      setIsLoading(false)
     }
 
-    useEffect(() =>{
+    console.log(hotel)
+  }
 
-        listHotel();
+  useEffect(() => {
+    listHotel()
+  }, [])
 
-    },[]);
+  return (
+    <div>
+      {isLoading
+        ? (
+          <p>Loading.... Wait a minute</p>
+          )
+        : (
+          <div>
+            {Array.isArray(hotel) && hotel.length > 0
+              ? (
+                  hotel.map((hotel) => (
+                    <div key={hotel._id}>
+                      <div>
+                        <h3>{hotel.hotelName}</h3>
 
-    return(
+                        <div>
+                          <img src={hotel.hotelImage} />
+                        </div>
 
-        <div>
-            {isLoading?(
-                <p>Loading.... Wait a minute</p>
-            ):(
-                <div>
-                    {Array.isArray(hotel) && hotel.length > 0 ?
-                    (
-                        hotel.map(hotel =>(
+                        <h3>{hotel.hotelDirection}</h3>
 
-                            <div key={hotel._id}>
+                        <h3>{hotel.hotelNumber}</h3>
 
-                                <div>
-
-                                    <h3>{hotel.hotelName}</h3>
-
-                                    <div>
-
-                                        <img src={hotel.hotelImage}/>
-
-                                    </div>
-
-                                    <h3>{hotel.hotelDirection}</h3>
-
-                                    <h3>{hotel.hotelNumber}</h3>
-
-                                    <h3>{hotel.status}</h3>
-
-                                </div>
-
-                            </div>
-
-                        ))
-                    ):(
-                        <h5>DATA NOT FOUND, SORRY :l</h5>
-                    )}
-                </div>
-            )}
-        </div>
-
-    )
-
+                        <h3>{hotel.status}</h3>
+                      </div>
+                    </div>
+                  ))
+                )
+              : (
+                <h5>DATA NOT FOUND, SORRY :l</h5>
+                )}
+          </div>
+          )}
+    </div>
+  )
 }
