@@ -41,3 +41,14 @@ export const register = async (data) => {
     }
   }
 }
+
+export const listHotels = async (data) => {
+  try {
+    return await apiClient.get('/hotel', data)
+  } catch (e) {
+    return {
+      error: true,
+      e
+    }
+  }
+}
