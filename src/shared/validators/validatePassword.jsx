@@ -1,8 +1,7 @@
 export const validatePassword = (password) => {
-  const regex = /^\S{6,12}$/
+  const regex = /^(?=.*[A-Z])(?=.*[1-9])(?=.*[!$%#])\S{6,12}$/
 
   return regex.test(password)
 }
 
-export const validatePasswordMessage =
-  'La contraseña debe de tener entre 6 y 12 caracteres sin espacios'
+export const validatePasswordMessage = 'One of the necessary parameters is missing: A capital letter, a number from 1-9, a special character, minium 6 characters'
