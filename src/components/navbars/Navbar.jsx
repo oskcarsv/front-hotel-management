@@ -48,12 +48,6 @@ export const Navbar = ({ redirectHome }) => {
           </div>
         ) : (
           <div className="buttons">
-            {/* <div className="lineal">
-              <a className="button" href="./" onClick={handleLogout}>
-                User
-              </a>
-            </div> */}
-
             <div className="lineal">
               <a className="button" href="#" onClick={handleLogout}>
                 Exit
