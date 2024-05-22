@@ -1,14 +1,11 @@
 .frame-1 {
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .contact-form {
   display: flex;
-  flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 800px;

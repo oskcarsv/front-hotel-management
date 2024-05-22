@@ -16,6 +16,7 @@ import {
 import { useRegister } from "../shared/hooks/useRegister";
 import "./Register.css";
 
+
 export const Register = ({ switchAuthHandler, onRegister }) => {
   const { register, isLoading } = useRegister();
 
@@ -109,65 +110,107 @@ export const Register = ({ switchAuthHandler, onRegister }) => {
   return (
     <div className="frame-1">
       <div className="contact-form">
-        <div className="login-1">Register</div>
-        <form className="auth-form" onSubmit={handleRegister}>
-          <Input
-            field="name"
-            label="Nombre"
-            value={formState.name.value}
-            onChangeHandler={handleInputValueChange}
-            type="text"
-            onBlurHandler={handleInputValidationOnBlur}
-            showErrorMessage={formState.name.showError}
-            validationMessage={validateNameMessage}
-          />
-          <Input
-            field="email"
-            label="Correo electrónico"
-            value={formState.email.value}
-            onChangeHandler={handleInputValueChange}
-            type="text"
-            onBlurHandler={handleInputValidationOnBlur}
-            showErrorMessage={formState.email.showError}
-            validationMessage={emailValidationMessage}
-          />
-          <Input
-            field="username"
-            label="Nombre de usuario"
-            value={formState.username.value}
-            onChangeHandler={handleInputValueChange}
-            type="text"
-            onBlurHandler={handleInputValidationOnBlur}
-            showErrorMessage={formState.username.showError}
-            validationMessage={validateUsernameMessage}
-          />
-          <Input
-            field="password"
-            label="Contraseña"
-            value={formState.password.value}
-            onChangeHandler={handleInputValueChange}
-            type="password"
-            onBlurHandler={handleInputValidationOnBlur}
-            showErrorMessage={formState.password.showError}
-            validationMessage={validatePasswordMessage}
-          />
-          <Input
-            field="passwordConfirm"
-            label="Confirmar Contraseña"
-            value={formState.passwordConfirm.value}
-            onChangeHandler={handleInputValueChange}
-            type="password"
-            onBlurHandler={handleInputValidationOnBlur}
-            showErrorMessage={formState.passwordConfirm.showError}
-            validationMessage={passwordConfirmationMessage}
-          />
-          <button type="submit" disabled={isSubmitButtonDisabled}>
-            Register
-          </button>
-        </form>
-        <span onClick={switchAuthHandler} className="auth-form-switch-label">
-          ¿Do you already have an account? Sign in here!
-        </span>
+        <div className="container">
+          <div className="container-1">
+            <div className="headline">
+              <div className="login-1">Register</div>
+              <span className="welcome-back">
+                Welcome to YouHotel
+                <br />
+              </span>
+            </div>
+            <form className="auth-form" onSubmit={handleRegister}>
+              <div className="input">
+                <div className="user-or-email">Name</div>
+                <div className="field">
+                  <Input
+                    field="name"
+                    value={formState.name.value}
+                    onChangeHandler={handleInputValueChange}
+                    type="text"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState.name.showError}
+                    validationMessage={validateNameMessage}
+                  />
+                </div>
+              </div>
+
+              <div className="input-1">
+                <div className="user-or-email">Email</div>
+                <div className="field">
+                  <Input
+                    field="email"
+                    value={formState.email.value}
+                    onChangeHandler={handleInputValueChange}
+                    type="text"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState.email.showError}
+                    validationMessage={emailValidationMessage}
+                  />
+                </div>
+              </div>
+
+              <div className="input-1">
+                <div className="user-or-email">Username</div>
+                <div className="field">
+                  <Input
+                    field="username"
+                    value={formState.username.value}
+                    onChangeHandler={handleInputValueChange}
+                    type="text"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState.username.showError}
+                    validationMessage={validateUsernameMessage}
+                  />
+                </div>
+              </div>
+
+              <div className="input-1">
+                <div className="user-or-email">Password</div>
+                <div className="field">
+                  <Input
+                    field="password"
+                    value={formState.password.value}
+                    onChangeHandler={handleInputValueChange}
+                    type="password"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState.password.showError}
+                    validationMessage={validatePasswordMessage}
+                  />
+                </div>
+              </div>
+
+              <div className="input-1">
+                <div className="user-or-email">Password</div>
+                <div className="field">
+                  <Input
+                    field="passwordConfirm"
+                    value={formState.passwordConfirm.value}
+                    onChangeHandler={handleInputValueChange}
+                    type="password"
+                    onBlurHandler={handleInputValidationOnBlur}
+                    showErrorMessage={formState.passwordConfirm.showError}
+                    validationMessage={passwordConfirmationMessage}
+                  />
+                </div>
+              </div>
+
+              <button
+                className="button-1"
+                type="submit"
+                disabled={isSubmitButtonDisabled}
+              >
+                Register
+              </button>
+            </form>
+            <span
+              onClick={switchAuthHandler}
+              className="auth-form-switch-label"
+            >
+              ¿Do you already have an account? Sign in here!
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   );

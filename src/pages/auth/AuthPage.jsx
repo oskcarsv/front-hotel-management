@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { Login } from '../../components/Login'
 import { Navbar } from '../../components/navbars/Navbar'
+import { Footer } from '../../components/footer/Footer.jsx'
 import { Register } from '../../components/Register'
 
 import './authPage.css'
@@ -30,6 +31,7 @@ export const AuthPage = () => {
             onRegister={handleLogin}
           />
           )}
+      <Footer />
     </div>
   )
 }
