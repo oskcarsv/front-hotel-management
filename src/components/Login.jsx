@@ -82,9 +82,6 @@ export const Login = ({ switchAuthHandler }) => {
         <div className='items'>
 
           <div className='abut-us'>About Us</div>
-          <div className='button-2' onClick={handleBack}>
-            <span className='Lbutton'>Regresar</span>
-          </div>
         </div>
         <div className='container'>
           <div className='container-1'>

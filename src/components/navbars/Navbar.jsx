@@ -10,6 +10,8 @@ export const Navbar = () => {
     window.location.href = './'
   }
 
+  const isLoginPage = window.location.pathname === '/auth';
+
   return (
     <nav className='navbar'>
       <div className='tittle-container'>
@@ -17,17 +19,21 @@ export const Navbar = () => {
       </div>
 
       <div className='buttons-container'>
-        {saved == null
-          ? (
+        {saved == null ? (
+          isLoginPage ? (
+            <a className='button' href='/'>
+              Home
+            </a>
+          ) : (
             <a className='button' href='/auth'>
               Login
             </a>
-            )
-          : (
-            <a className='button' href='#' onClick={handleLogout}>
-              Exit
-            </a>
-            )}
+          )
+        ) : (
+          <a className='button' href='#' onClick={handleLogout}>
+            Exit
+          </a>
+        )}
       </div>
     </nav>
   )
