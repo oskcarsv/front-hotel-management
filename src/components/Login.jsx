@@ -1,21 +1,21 @@
-/* eslint-disable react/prop-types */
-import { useState } from 'react'
-import { Input } from './Input'
+import { useState } from 'react';
+import { Input } from './Input';
 import {
   validatePasswordMessage,
   validatePassword,
   validateUsernameOrEmail,
   validateUsernameOrEmailMessage
-} from '../shared/validators'
-import { useLogin } from '../shared/hooks'
-import { useNavigate } from 'react-router-dom'
-import myImage from '../assets/img/login-img.png'
+} from '../shared/validators';
+import { useLogin } from '../shared/hooks';
+import { useNavigate } from 'react-router-dom';
+import myImage from '../assets/img/login-img.png';
 
-import './styles/Login.css'
+import './styles/Variables.css';  
+import './styles/Login.css';  
 
 export const Login = ({ switchAuthHandler }) => {
-  const { login, isLoading } = useLogin()
-  const navigate = useNavigate()
+  const { login, isLoading } = useLogin();
+  const navigate = useNavigate();
 
   const [formState, setFormState] = useState({
     usernameOrEmail: {
@@ -28,7 +28,7 @@ export const Login = ({ switchAuthHandler }) => {
       isValid: false,
       showError: false
     }
-  })
+  });
 
   const handleInputValueChange = (value, field) => {
     setFormState((prevState) => ({
@@ -37,20 +37,20 @@ export const Login = ({ switchAuthHandler }) => {
         ...prevState[field],
         value
       }
-    }))
-  }
+    }));
+  };
 
   const handleInputValidationOnBlur = (value, field) => {
-    let isValid = false
+    let isValid = false;
     switch (field) {
       case 'usernameOrEmail':
-        isValid = validateUsernameOrEmail(value)
-        break
+        isValid = validateUsernameOrEmail(value);
+        break;
       case 'password':
-        isValid = validatePassword(value)
-        break
+        isValid = validatePassword(value);
+        break;
       default:
-        break
+        break;
     }
     setFormState((prevState) => ({
       ...prevState,
@@ -59,32 +59,31 @@ export const Login = ({ switchAuthHandler }) => {
         isValid,
         showError: !isValid
       }
-    }))
-  }
+    }));
+  };
 
   const handleLogin = (event) => {
-    event.preventDefault()
-    login(formState.usernameOrEmail.value, formState.password.value)
-  }
+    event.preventDefault();
+    login(formState.usernameOrEmail.value, formState.password.value);
+  };
 
   const handleBack = () => {
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   const isSubmitButtonDisabled =
     isLoading ||
     !formState.password.isValid ||
-    !formState.usernameOrEmail.isValid
+    !formState.usernameOrEmail.isValid;
 
   return (
     <div className='frame-1'>
       <div className='contact-form'>
         <div className='items'>
-          <div className='page'>Page</div>
-          <div className='page-1'>Page</div>
+
           <div className='abut-us'>About Us</div>
           <div className='button-2' onClick={handleBack}>
-            <span className='regresar'>Regresar</span>
+            <span className='Lbutton'>Regresar</span>
           </div>
         </div>
         <div className='container'>
@@ -127,7 +126,7 @@ export const Login = ({ switchAuthHandler }) => {
               </div>
               <div className='button'>
                 <button type='submit' disabled={isSubmitButtonDisabled}>
-                  <span className='login'>Login</span>
+                  <span className='Lbutton'>Login</span>
                 </button>
               </div>
             </form>
@@ -137,7 +136,7 @@ export const Login = ({ switchAuthHandler }) => {
                 <br />
               </div>
               <div className='button-1' onClick={switchAuthHandler}>
-                <span className='register'>Register</span>
+                <span className='Lbutton'>Register</span>
               </div>
             </div>
           </div>
@@ -148,5 +147,5 @@ export const Login = ({ switchAuthHandler }) => {
         <div className='navigation-footer' />
       </div>
     </div>
-  )
-}
+  );
+};
