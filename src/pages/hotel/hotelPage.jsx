@@ -9,7 +9,7 @@ export const HotelPage = () => {
     <div className='hotel-container'>
       <Navbar />
 
-      <HotelCard/>
+      <HotelCard />
 
       <Footer />
     </div>
