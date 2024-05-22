@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 
 import { useNavigate } from 'react-router-dom'
 
+import '../styles/Variables.css'
+import '../styles/Cards.css'
+
 import toast from 'react-hot-toast'
 
 export const HotelCard = () => {
