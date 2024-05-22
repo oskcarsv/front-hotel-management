@@ -36,11 +36,9 @@
   transform: scale(0.95);
 }
 
-.lineal{
-
+.lineal {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 20px 0;
-
 }
