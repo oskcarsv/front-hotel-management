@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { Input } from './Input'
 import {
@@ -11,6 +10,7 @@ import { useLogin } from '../shared/hooks'
 import { useNavigate } from 'react-router-dom'
 import myImage from '../assets/img/login-img.png'
 
+import './styles/Variables.css'
 import './styles/Login.css'
 
 export const Login = ({ switchAuthHandler }) => {
@@ -80,12 +80,7 @@ export const Login = ({ switchAuthHandler }) => {
     <div className='frame-1'>
       <div className='contact-form'>
         <div className='items'>
-          <div className='page'>Page</div>
-          <div className='page-1'>Page</div>
           <div className='abut-us'>About Us</div>
-          <div className='button-2' onClick={handleBack}>
-            <span className='regresar'>Regresar</span>
-          </div>
         </div>
         <div className='container'>
           <div className='container-1'>
@@ -127,7 +122,7 @@ export const Login = ({ switchAuthHandler }) => {
               </div>
               <div className='button'>
                 <button type='submit' disabled={isSubmitButtonDisabled}>
-                  <span className='login'>Login</span>
+                  <span className='Lbutton'>Login</span>
                 </button>
               </div>
             </form>
@@ -137,7 +132,7 @@ export const Login = ({ switchAuthHandler }) => {
                 <br />
               </div>
               <div className='button-1' onClick={switchAuthHandler}>
-                <span className='register'>Register</span>
+                <span className='Lbutton'>Register</span>
               </div>
             </div>
           </div>

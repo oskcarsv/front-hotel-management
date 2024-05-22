@@ -10,6 +10,8 @@ export const Navbar = ({ redirectHome }) => {
     window.location.href = './'
   }
 
+  const isLoginPage = window.location.pathname === '/auth'
+
   return (
     <nav className='navbar'>
       <div className='tittle-container'>
