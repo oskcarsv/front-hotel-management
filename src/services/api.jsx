@@ -9,13 +9,11 @@ const apiClient = axios.create({
 apiClient.interceptors.request.use(
   (config) => {
     const userDetails = localStorage.getItem('user')
-
-    // if(userDetails != null && userDetails !== undefined){
     if (userDetails) {
       const token = JSON.parse(userDetails).token
       config.headers.Authorization = `Bearer ${token}`
     }
-    // }
+    console.log(userDetails)
     return config
   },
   (e) => {
@@ -25,9 +23,9 @@ apiClient.interceptors.request.use(
 
 export const login = async (data) => {
   try {
-    console.log({ data })
 
     return await apiClient.post('auth/login', data)
+    
   } catch (e) {
     return {
       error: true,
