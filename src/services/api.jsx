@@ -11,7 +11,7 @@ apiClient.interceptors.request.use(
     const userDetails = localStorage.getItem('user')
     if (userDetails) {
       const token = JSON.parse(userDetails).token
-      config.headers.Authorization = `Bearer ${token}`
+      config.headers.Authorization = `${token}`
     }
     console.log(userDetails)
     return config
@@ -34,6 +34,17 @@ export const login = async (data) => {
 export const register = async (data) => {
   try {
     return await apiClient.post('/auth/register', data)
+  } catch (e) {
+    return {
+      error: true,
+      e
+    }
+  }
+}
+
+export const listHotels = async (data) => {
+  try {
+    return await apiClient.get('/hotel', data)
   } catch (e) {
     return {
       error: true,

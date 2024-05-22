@@ -1,8 +1,13 @@
+import { jwtDecode } from 'jwt-decode'
+import { useState } from 'react'
 import '../styles/Navbar.css'
 import '../styles/Variables.css'
+import toast from 'react-hot-toast'
 
 export const Navbar = ({ redirectHome }) => {
   let saved = localStorage.getItem('user')
+
+  saved = JSON.parse(saved)
 
   const handleLogout = () => {
     localStorage.removeItem('user')
@@ -11,6 +16,8 @@ export const Navbar = ({ redirectHome }) => {
   }
 
   const isLoginPage = window.location.pathname === '/auth'
+
+  const allowedRoles = ['SUPER_ROLE', 'ADMIN_BOSS_ROLE', 'ADMIN_EMPLOYEE_ROLE']
 
   return (
     <nav className='navbar'>
@@ -31,11 +38,34 @@ export const Navbar = ({ redirectHome }) => {
                 Login
               </a>
               )
-            : (
-              <a className='button' href='#' onClick={handleLogout}>
-                Exit
-              </a>
-              )}
+            : allowedRoles.includes(saved.user.role)
+              ? (
+                <div className='lineal'>
+                  <a className='button' href='./'>
+                    Add Hotel
+                  </a>
+                  <a className='button' href='./'>
+                    User
+                  </a>
+                  <a className='button' href='#' onClick={handleLogout}>
+                    Exit
+                  </a>
+                </div>
+                )
+              : (
+                <a className='button' href='#' onClick={handleLogout}>
+                  <>
+                    <div className='lineal'>
+                      <a className='button' href='./' onClick={handleLogout}>
+                        User
+                      </a>
+                      <a className='button' href='#' onClick={handleLogout}>
+                        Exit
+                      </a>
+                    </div>
+                  </>
+                </a>
+                )}
       </div>
     </nav>
   )
